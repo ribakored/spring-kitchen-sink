@@ -4,4 +4,5 @@ metadata:
   name: spring-sample-app
 data:
   application.properties: |-
-    bean.message=Overriden Message from Configmap
+    app.message=Overriden Message from Configmap
+    app.timeout=500

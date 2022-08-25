@@ -6,5 +6,5 @@ metadata:
     {{- include "spring-sample-app.labels" . | nindent 4 }}
 rules:
   - apiGroups: [""] # "" indicates the core API group
-    resources: ["pods","configmaps","endpoints"]
+    resources: ["pods","configmaps","endpoints","services"]
     verbs: ["get", "watch", "list"]

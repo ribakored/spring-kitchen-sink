@@ -4,7 +4,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 @Configuration
 @RefreshScope
-@ConfigurationProperties(prefix = "bean")
+@ConfigurationProperties(prefix = "app")
 public class AppConfig {
     private String timeout;
     private String message;
