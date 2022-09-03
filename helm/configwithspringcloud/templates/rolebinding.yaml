@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ include "configwithspringcloud.name" . }}
+  labels:
+    {{- include "configwithspringcloud.labels" . | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ include "configwithspringcloud.name" . }}
+subjects:
+  - kind: ServiceAccount
+    name: {{- include "config.client.fullname" . | nindent 6 }}
+  - kind: ServiceAccount
+    name: {{- include "config.server.fullname" . | nindent 6 }}
