@@ -8,7 +8,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "configwithspringcloud.selectorLabels" . | nindent 6 }}
+      {{- include "config.server.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -16,7 +16,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "configwithspringcloud.selectorLabels" . | nindent 8 }}
+        {{- include "config.server.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.server.image.imagePullSecrets }}
       imagePullSecrets:
