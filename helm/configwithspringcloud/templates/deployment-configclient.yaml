@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "config.client.fullname" . }}
   labels:
-    {{- include "configwithspringcloud.labels" . | nindent 4 }}
+    {{- include "config.client.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.client.replicaCount }}
   selector:
@@ -39,7 +39,7 @@ spec:
             httpGet:
               path: {{ .Values.client.livenessProbe }}
               port: http
-            initialDelaySeconds: 20
+            initialDelaySeconds: 60
           readinessProbe:
             httpGet:
               path: {{ .Values.client.readinessProbe }}

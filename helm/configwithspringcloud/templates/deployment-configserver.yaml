@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "config.server.fullname" . }}
   labels:
-    {{- include "configwithspringcloud.labels" . | nindent 4 }}
+    {{- include "config.server.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -37,7 +37,7 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: {{ .Values.server.readinessProbe }}
+              path: {{ .Values.server.livenessProbe }}
               port: http
           readinessProbe:
             httpGet:
