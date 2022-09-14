@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '1.0'
+version = '1.5'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -17,6 +17,13 @@ ext {
     set('springCloudVersion', "2021.0.3")
 }
 
+configurations {
+    all {
+        exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+        exclude group: "org.apache.logging.log4j", module: "log4j-api"
+    }
+}
+wd
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-actuator"
     implementation "org.springframework.cloud:spring-cloud-config-server"
@@ -36,4 +43,17 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-jib.container.creationTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC"))
+
+jib {
+    from {
+        image "openjdk:8-jre-alpine"
+    }
+    container {
+        creationTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC"))
+    }
+}
+
+task copyDependencies(type: Copy) {
+    from configurations.runtimeClasspath
+    into 'dependencies'
+}

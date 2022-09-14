@@ -1,1 +1,2 @@
+include ':config-server'
 rootProject.name = 'config-server'
