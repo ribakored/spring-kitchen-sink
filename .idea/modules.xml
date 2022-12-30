@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/centralized-config/app1/app1.iml" filepath="$PROJECT_DIR$/centralized-config/app1/app1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app1.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app1.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/config-server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/config-server.test.iml" />
