@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        strategy: refresh
+        mode: event
+      config:
+        name: app2
+        sources:
+          - name: app2
+          - name: shared
+server:
+  port: 8082
+app1:
+  message: Base Message from the app
+  timeout: 1000
