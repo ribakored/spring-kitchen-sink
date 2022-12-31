@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     private String timeout;
     private String message;
+
+    private String shared;
+
     public String getTimeout() {
         return timeout;
     }
@@ -19,5 +22,13 @@ public class AppConfig {
     }
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getShared() {
+        return shared;
+    }
+
+    public void setShared(String shared) {
+        this.shared = shared;
     }
 }

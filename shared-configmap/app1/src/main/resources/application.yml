@@ -12,6 +12,7 @@ spring:
           - name: shared
 server:
   port: 8081
-app1:
+app:
   message: Base Message from the app
   timeout: 1000
+  shared: Shared Message from app1

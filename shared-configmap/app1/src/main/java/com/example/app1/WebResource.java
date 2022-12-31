@@ -1,3 +1,5 @@
+package com.example.app1;
+
 import com.example.app1.AppConfig;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,6 +12,9 @@ public class WebResource {
     }
     @GetMapping(value = "/propertyValues")
     public @ResponseBody String getPropertyValues(){
-        return String.format("Timeout=%s, Message=%s",appConfig.getTimeout(),appConfig.getMessage());
+        return String.format("\nTimeout=%s, Message=%s, Shared Message=%s",
+                appConfig.getTimeout(),
+                appConfig.getMessage(),
+                appConfig.getShared());
     }
 }

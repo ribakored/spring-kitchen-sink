@@ -1,3 +1,6 @@
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
 plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
@@ -8,7 +11,7 @@ def sbVersion='2.3.12.RELEASE'
 def sbk8sVersion='1.1.10.RELEASE'
 def k8sJavaClientVersion = '16.0.0'
 group = 'com.example'
-version = '1.0'
+version = '1.2'
 sourceCompatibility = 1.8
 repositories {
     mavenCentral()
@@ -23,3 +26,5 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+jib.container.creationTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC"))
