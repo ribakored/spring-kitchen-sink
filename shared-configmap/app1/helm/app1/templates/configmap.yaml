@@ -4,6 +4,8 @@ metadata:
   name: {{ include "app1.name" . }}
   labels:
     {{- include "app1.labels" . | nindent 4 }}
+  annotations:
+    spring.cloud.kubernetes.configmap.apps: "app1"
 data:
   application.properties: |-
     app.message=Overriden Message from Configmap

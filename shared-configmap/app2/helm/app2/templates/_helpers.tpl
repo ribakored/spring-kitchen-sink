@@ -38,6 +38,7 @@ helm.sh/chart: {{ include "app2.chart" . }}
 {{ include "app2.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+spring.cloud.kubernetes.config: "true"
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}

@@ -3,7 +3,9 @@ kind: ConfigMap
 metadata:
   name: shared
   labels:
-
+    spring.cloud.kubernetes.config: "true"
+  annotations:
+    spring.cloud.kubernetes.configmap.apps: "app1, app2"
 data:
   application.properties: |-
     app.shared=Message from Shared Configmap

@@ -1,18 +1,44 @@
 spring:
   cloud:
     kubernetes:
-      reload:
-        enabled: true
-        strategy: refresh
-        mode: event
       config:
         name: app1
         sources:
           - name: app1
           - name: shared
+
+
+      configuration:
+        watcher:
+          actuatorPath: /actuator
+          actuatorPort: 8081
+
+
+
+
+
+
+  application:
+    name: app1
+
+  profiles:
+    active: app1
+
 server:
   port: 8081
 app:
   message: Base Message from the app
   timeout: 1000
-  shared: Shared Message from app1
+  shared: Shared Message from app
+shared:
+  toggleA: DHG
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health
+logging:
+  config:
+
