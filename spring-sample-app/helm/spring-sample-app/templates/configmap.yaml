@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-sample-app
+data:
+  application.properties: |-
+    app.message=Overriden Message from Configmap
+    app.timeout=500
