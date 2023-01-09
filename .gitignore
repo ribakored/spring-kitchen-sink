@@ -9,3 +9,4 @@ configmap-watcher-example/app2/app2.iws
 
 configmap-watcher-example/**/build/
 configmap-reload-example/**/build/
+
