@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    kubernetes:
+      config:
+        name: app2
+        sources:
+            - namespace: shared
+              name: shared
+  configuration:
+    watcher:
+      actuatorPath: /actuator
+      actuatorPort: 8081
+  application:
+    name: app2
+  profiles:
+    active: app2
+
+server:
+  port: 8082
+app:
+  message: Base Message from the app
+  timeout: 1000
+
+shared:
+  toggleA: Shared Message from app2
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health

@@ -1,8 +1,8 @@
 .idea
 helm/configwithspringcloud/charts/
-shared-configmap/app1/.gradle
-shared-configmap/app2/.gradle
-shared-configmap/app1/app1.ipr
-shared-configmap/app1/app1.iws
-shared-configmap/app2/app2.ipr
-shared-configmap/app2/app2.iws
+configmap-watcher-example/app1/.gradle
+configmap-watcher-example/app2/.gradle
+configmap-watcher-example/app1/app1.ipr
+configmap-watcher-example/app1/app1.iws
+configmap-watcher-example/app2/app2.ipr
+configmap-watcher-example/app2/app2.iws
