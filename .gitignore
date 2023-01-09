@@ -6,3 +6,6 @@ configmap-watcher-example/app1/app1.ipr
 configmap-watcher-example/app1/app1.iws
 configmap-watcher-example/app2/app2.ipr
 configmap-watcher-example/app2/app2.iws
+
+configmap-watcher-example/**/build/
+configmap-reload-example/**/build/

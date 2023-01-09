@@ -1,0 +1,25 @@
+plugins {
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id 'com.google.cloud.tools.jib' version '3.2.1'
+    id 'idea'
+}
+def sbVersion='2.3.12.RELEASE'
+def sbk8sVersion='1.1.10.RELEASE'
+def k8sJavaClientVersion = '16.0.0'
+group = 'com.example'
+version = '1.0'
+sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:${sbVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${sbVersion}"
+    implementation "io.kubernetes:client-java:${k8sJavaClientVersion}"
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-kubernetes-all', version: "${sbk8sVersion}"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${sbVersion}"
+}
+tasks.named('test') {
+    useJUnitPlatform()
+}
