@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#  minikube start --driver=hyperkit --container-runtime=docker && eval $(minikube -p minikube docker-env)
 helm delete app1
 helm delete app2
 docker rmi -f $docker$(docker images app1 -aq)

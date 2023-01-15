@@ -3,9 +3,6 @@ spring:
     kubernetes:
       config:
         name: app1
-        sources:
-          - namespace: shared
-            name: shared
       configuration:
         watcher:
           actuatorPath: /actuator
@@ -17,15 +14,10 @@ server:
 app:
   message: Base Message from the app
   timeout: 1000
-  shared: Shared Message from app
-shared:
-  toggleA: DHG
 
 management:
   endpoints:
     web:
       exposure:
         include: refresh, health
-logging:
-  config:
 

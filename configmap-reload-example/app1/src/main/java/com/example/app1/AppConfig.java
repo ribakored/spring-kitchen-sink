@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
     private String timeout;
     private String message;
-
-
     public String getTimeout() {
         return timeout;
     }
