@@ -16,10 +16,10 @@ import java.util.Map;
 
 @Configuration
 @RefreshScope
-public class ToggleConfig {
+public class SharedConfig {
 
-    public static final Logger log = LoggerFactory.getLogger(ToggleConfig.class);
-    public ToggleConfig() throws IOException, ApiException {
+    public static final Logger log = LoggerFactory.getLogger(SharedConfig.class);
+    public SharedConfig() throws IOException, ApiException {
         ApiClient client = Config.defaultClient();
         io.kubernetes.client.openapi.Configuration.setDefaultApiClient(client);
         CoreV1Api api = new CoreV1Api();

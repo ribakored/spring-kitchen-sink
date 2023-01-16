@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebResource {
     private AppConfig appConfig;
-    private ToggleConfig toggleConfig;
-    public WebResource(AppConfig appConfig, ToggleConfig toggleConfig){
+    private SharedConfig sharedConfig;
+    public WebResource(AppConfig appConfig, SharedConfig sharedConfig){
         this.appConfig = appConfig;
-        this.toggleConfig = toggleConfig;
+        this.sharedConfig = sharedConfig;
     }
     @GetMapping(value = "/propertyValues")
     public @ResponseBody String getPropertyValues(){
         return String.format("\nTimeout=%s, Message=%s, Shared Message=%s",
                 appConfig.getTimeout(),
                 appConfig.getMessage(),
-                toggleConfig.getToggleA());
+                sharedConfig.getToggleA());
     }
 }
